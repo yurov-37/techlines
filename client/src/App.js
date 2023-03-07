@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar.jsx";
 import ProductsScreen from "./screens/ProductsScreen.jsx";
 import CartScreen from "./screens/CartScreen.jsx";
 import ProductScreen from "./screens/ProductScreen.jsx";
+import Footer from "./components/Footer.jsx";
+import LandingScreen from "./screens/LandingScreen.jsx";
 
 function App() {
   return (
@@ -12,11 +14,13 @@ function App() {
         <Navbar />
         <main>
           <Routes>
+            <Route path="/" element={<LandingScreen />}></Route>
             <Route path="/products" element={<ProductsScreen />}></Route>
             <Route path="/product/:id" element={<ProductScreen />}></Route>
             <Route path="/cart" element={<CartScreen />}></Route>
           </Routes>
         </main>
+        <Footer />
       </Router>
     </ChakraProvider>
   );
