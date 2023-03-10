@@ -75,7 +75,6 @@ const RegistrationScreen = () => {
           px={{ base: "0", md: "8" }}
           minH="4xl"
         >
-          {" "}
           <Stack spacing="8">
             <Stack spacing="6">
               <Stack spacing={{ base: "2", md: "3" }} textAlign="center">

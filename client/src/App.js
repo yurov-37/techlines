@@ -8,6 +8,7 @@ import Footer from "./components/Footer.jsx";
 import LandingScreen from "./screens/LandingScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import RegistrationScreen from "./screens/RegistrationScreen.jsx";
+import ProfileScreen from "./screens/ProfileScreen.jsx";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               path="/registration"
               element={<RegistrationScreen />}
             ></Route>
+            <Route path="/profile" element={<ProfileScreen />}></Route>
           </Routes>
         </main>
         <Footer />
