@@ -6,7 +6,7 @@ const protectRoute = asyncHandler(async (req, res, next) => {
   let token;
 
   if (
-    req.headers.authorizarion &&
+    req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer")
   ) {
     try {
