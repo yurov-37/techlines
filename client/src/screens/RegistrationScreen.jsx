@@ -83,7 +83,7 @@ const RegistrationScreen = () => {
                   <Text color="muted">Already a user?</Text>
                   <Button
                     as={ReactLink}
-                    to="/registration"
+                    to="/login"
                     variant="link"
                     colorScheme="orange"
                   >
