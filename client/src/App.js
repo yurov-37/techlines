@@ -9,6 +9,7 @@ import LandingScreen from "./screens/LandingScreen.jsx";
 import LoginScreen from "./screens/LoginScreen.jsx";
 import RegistrationScreen from "./screens/RegistrationScreen.jsx";
 import ProfileScreen from "./screens/ProfileScreen.jsx";
+import CheckoutScreen from "./screens/CheckoutScreen.jsx";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               element={<RegistrationScreen />}
             ></Route>
             <Route path="/profile" element={<ProfileScreen />}></Route>
+            <Route path="/checkout" element={<CheckoutScreen />}></Route>
           </Routes>
         </main>
         <Footer />
