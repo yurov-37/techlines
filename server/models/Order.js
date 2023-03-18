@@ -32,7 +32,7 @@ const orderSchema = new mongoose.Schema(
     isDelivered: { type: Boolean, required: true, default: false },
     deliveredAt: { type: Date },
   },
-  { timeStamp: true }
+  { timestamps: true }
 );
 
 const Order = mongoose.model("Order", orderSchema);
