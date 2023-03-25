@@ -134,7 +134,7 @@ const OrdersTab = () => {
                       </Td>
                       <Td>
                         {order.orderItems.map((item) => (
-                          <Text>
+                          <Text key={item._id}>
                             {item.qty} x {item.name}
                           </Text>
                         ))}
