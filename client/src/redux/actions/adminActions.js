@@ -10,7 +10,11 @@ import {
   getOrders,
 } from "../slices/admin.js";
 
-import { setProductUpdateFlag, setProducts } from "../slices/products.js";
+import {
+  setProductUpdateFlag,
+  setProducts,
+  setReviewRemovalFlag,
+} from "../slices/products.js";
 
 export const getAllusers = () => async (dispatch, getState) => {
   const {
@@ -255,3 +259,36 @@ export const uploadProduct = (newProduct) => async (dispatch, getState) => {
     );
   }
 };
+
+export const removeReview =
+  (productId, reviewId) => async (dispatch, getState) => {
+    const {
+      user: { userInfo },
+    } = getState();
+
+    try {
+      const config = {
+        headers: {
+          Authorization: `Bearer ${userInfo.token}`,
+          "Content-Type": "application/json",
+        },
+      };
+      const { data } = await axios.put(
+        `api/products/${productId}/${reviewId}`,
+        {},
+        config
+      );
+      dispatch(setProducts(data));
+      dispatch(setReviewRemovalFlag(data));
+    } catch (error) {
+      dispatch(
+        setError(
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message
+            ? error.message
+            : "Review could not be removed."
+        )
+      );
+    }
+  };
